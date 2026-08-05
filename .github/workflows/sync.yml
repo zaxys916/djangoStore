@@ -8,15 +8,13 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      # 1. 升级到 v5，使用 Node.js 24 运行
       - name: Checkout
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
-      # 2. 升级到 v2，同样适配新版 Node.js
       - name: Mirror to Gitee
-        uses: pixta-dev/repository-mirroring-action@v2
+        uses: pixta-dev/repository-mirroring-action@v1
         with:
           target_repo_url: git@gitee.com:zaxys916/djangoStore.git
           ssh_private_key: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
