@@ -18,3 +18,9 @@ jobs:
         with:
           target_repo_url: git@gitee.com:zaxys916/django-store.git
           ssh_private_key: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
+
+      - name: Mirror to YUNXIAO
+        uses: pixta-dev/repository-mirroring-action@v1
+        with:
+          target_repo_url: git@codeup.aliyun.com:69a844b1cf8993734af34b7d/djangoStore.git
+          ssh_private_key: ${{ secrets.YX_RSA_PRIVATE_KEY }}
