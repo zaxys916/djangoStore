@@ -3,6 +3,7 @@ name: Deploy to Server
 on:
   push:
     branches: [main]
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -11,26 +12,25 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v5
 
-      - name: Setup SSH key
+      - name: Setup SSH
         run: |
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-
-      - name: Export requirements.txt
-        run: |
-          pip install uv
-          uv export --no-dev --format requirements-txt > requirements.txt
+          echo "Host *" > ~/.ssh/config
+          echo "    StrictHostKeyChecking no" >> ~/.ssh/config
+          echo "    UserKnownHostsFile /dev/null" >> ~/.ssh/config
+          echo "    ServerAliveInterval 60" >> ~/.ssh/config
+          chmod 600 ~/.ssh/config
 
       - name: Deploy via SSH
+        env:
+          SSH_USER: ${{ secrets.USERNAME }}
+          SSH_HOST: ${{ secrets.HOST }}
+          SSH_TARGET: ${{ secrets.TARGET_DIR }}
         run: |
-          ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
-            ${{ secrets.USERNAME }}@${{ secrets.HOST }} << 'EOF'
-            cd ${{ secrets.TARGET_DIR }}
+          ssh "$SSH_USER@$SSH_HOST" << 'EOF'
+            cd $SSH_TARGET
             git pull origin main
-            # 可选：使用 uv 同步依赖
-            uv sync
-            uv run python manage.py migrate
-            uv run python manage.py collectstatic --noinput
-            sudo systemctl restart gunicorn
+            echo "✅ Deploy completed on $(date)"
           EOF
