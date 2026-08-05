@@ -20,17 +20,33 @@ jobs:
           echo "Host *" > ~/.ssh/config
           echo "    StrictHostKeyChecking no" >> ~/.ssh/config
           echo "    UserKnownHostsFile /dev/null" >> ~/.ssh/config
-          echo "    ServerAliveInterval 60" >> ~/.ssh/config
           chmod 600 ~/.ssh/config
 
       - name: Deploy via SSH
         env:
-          SSH_USER: ${{ secrets.USERNAME }}
-          SSH_HOST: ${{ secrets.HOST }}
-          SSH_TARGET: ${{ secrets.TARGET_DIR }}
+          SSH_USER: root
+          SSH_HOST: bacon-cleared-serves-graduation.trycloudflare.com
+          SSH_TARGET: /var/www/djangoStore
         run: |
-          ssh "$SSH_USER@$SSH_HOST" << 'EOF'
-            cd $SSH_TARGET
+          # 使用多种方式清理变量（去除换行、空格、回车等）
+          SSH_USER_CLEAN=$(echo "$SSH_USER" | tr -d '\n\r' | sed 's/ //g' | xargs)
+          SSH_HOST_CLEAN=$(echo "$SSH_HOST" | tr -d '\n\r' | sed 's/ //g' | xargs)
+          SSH_TARGET_CLEAN=$(echo "$SSH_TARGET" | tr -d '\n\r' | sed 's/ //g' | xargs)
+
+          # 打印清理后的值（用于调试）
+          echo "Cleaned Username: [$SSH_USER_CLEAN]"
+          echo "Cleaned Host: [$SSH_HOST_CLEAN]"
+          echo "Cleaned Target: [$SSH_TARGET_CLEAN]"
+
+          # 验证清理后的值不为空且不包含非法字符
+          if [ -z "$SSH_HOST_CLEAN" ]; then
+            echo "❌ ERROR: Host is empty after cleaning!"
+            exit 1
+          fi
+
+          # 使用清理后的变量
+          ssh -T "$SSH_USER_CLEAN@$SSH_HOST_CLEAN" << EOF
+            cd $SSH_TARGET_CLEAN
             git pull origin main
-            echo "✅ Deploy completed on $(date)"
-          EOF
+            echo "✅ Deploy completed on \$(date)"
+            EOF
