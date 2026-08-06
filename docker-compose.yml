@@ -28,6 +28,8 @@ services:
     image: django-store:latest
     container_name: django_app
     restart: always
+    ports:
+      - "8000:8000" 
     environment:
       - DEBUG=True
       - SECRET_KEY=test-key
