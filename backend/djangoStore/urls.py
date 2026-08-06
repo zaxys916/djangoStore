@@ -16,8 +16,18 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from .apps.users import urls
+def log(request):
+    import logging
+    logger = logging.getLogger("djangoStore")
+    logger.info("log")
+    logger.error("log")
+    logger.warning("log")
+    logger.debug("log")
+    return HttpResponse("log")
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path('users/', include(urls)),
 ]
