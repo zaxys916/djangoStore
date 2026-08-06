@@ -14,7 +14,7 @@ class UsernameCountView(View):
             count = User.objects.filter(username=username).count()
         except Exception as e:
             # 👇 关键修改：把真实的错误信息返回给前端
-            return JsonResponse({'code': 200, 'count': 0, 'errmsg': f'数据库异常: {str(e)}'})
+            return JsonResponse({'code': 200, 'count': 1, 'errmsg': f'数据库异常: {str(e)}'})
         
         return JsonResponse({'code': 0, 'count': count})
 
