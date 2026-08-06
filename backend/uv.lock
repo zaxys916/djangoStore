@@ -126,6 +126,37 @@ wheels = [
 ]
 
 [[package]]
+name = "django-filter"
+version = "24.3"
+source = { registry = "https://pypi.org/simple/" }
+resolution-markers = [
+    "python_full_version < '3.9'",
+]
+dependencies = [
+    { name = "django", marker = "python_full_version < '3.9'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/50/bc/dc19ae39c235332926dd0efe0951f663fa1a9fc6be8430737ff7fd566b20/django_filter-24.3.tar.gz", hash = "sha256:d8ccaf6732afd21ca0542f6733b11591030fa98669f8d15599b358e24a2cd9c3", size = 144444, upload-time = "2024-08-02T13:27:58.132Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/09/b1/92f1c30b47c1ebf510c35a2ccad9448f73437e5891bbd2b4febe357cc3de/django_filter-24.3-py3-none-any.whl", hash = "sha256:c4852822928ce17fb699bcfccd644b3574f1a2d80aeb2b4ff4f16b02dd49dc64", size = 95011, upload-time = "2024-08-02T13:27:55.616Z" },
+]
+
+[[package]]
+name = "django-filter"
+version = "25.1"
+source = { registry = "https://pypi.org/simple/" }
+resolution-markers = [
+    "python_full_version >= '3.10'",
+    "python_full_version == '3.9.*'",
+]
+dependencies = [
+    { name = "django", marker = "python_full_version >= '3.9'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/b5/40/c702a6fe8cccac9bf426b55724ebdf57d10a132bae80a17691d0cf0b9bac/django_filter-25.1.tar.gz", hash = "sha256:1ec9eef48fa8da1c0ac9b411744b16c3f4c31176c867886e4c48da369c407153", size = 143021, upload-time = "2025-02-14T16:30:53.238Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/07/a6/70dcd68537c434ba7cb9277d403c5c829caf04f35baf5eb9458be251e382/django_filter-25.1-py3-none-any.whl", hash = "sha256:4fa48677cf5857b9b1347fed23e355ea792464e0fe07244d1fdfb8a806215b80", size = 94114, upload-time = "2025-02-14T16:30:50.435Z" },
+]
+
+[[package]]
 name = "django-redis"
 version = "5.4.0"
 source = { registry = "https://pypi.org/simple/" }
@@ -213,6 +244,8 @@ dependencies = [
     { name = "django" },
     { name = "django-cors-headers", version = "4.4.0", source = { registry = "https://pypi.org/simple/" }, marker = "python_full_version < '3.9'" },
     { name = "django-cors-headers", version = "4.9.0", source = { registry = "https://pypi.org/simple/" }, marker = "python_full_version >= '3.9'" },
+    { name = "django-filter", version = "24.3", source = { registry = "https://pypi.org/simple/" }, marker = "python_full_version < '3.9'" },
+    { name = "django-filter", version = "25.1", source = { registry = "https://pypi.org/simple/" }, marker = "python_full_version >= '3.9'" },
     { name = "django-redis", version = "5.4.0", source = { registry = "https://pypi.org/simple/" }, marker = "python_full_version < '3.9'" },
     { name = "django-redis", version = "6.0.0", source = { registry = "https://pypi.org/simple/" }, marker = "python_full_version >= '3.9'" },
     { name = "djangorestframework", version = "3.15.2", source = { registry = "https://pypi.org/simple/" }, marker = "python_full_version < '3.9'" },
@@ -220,15 +253,19 @@ dependencies = [
     { name = "djangorestframework", version = "3.17.2", source = { registry = "https://pypi.org/simple/" }, marker = "python_full_version >= '3.10'" },
     { name = "gunicorn", version = "23.0.0", source = { registry = "https://pypi.org/simple/" }, marker = "python_full_version < '3.10'" },
     { name = "gunicorn", version = "26.0.0", source = { registry = "https://pypi.org/simple/" }, marker = "python_full_version >= '3.10'" },
+    { name = "pymysql", version = "1.1.2", source = { registry = "https://pypi.org/simple/" }, marker = "python_full_version < '3.9'" },
+    { name = "pymysql", version = "1.2.0", source = { registry = "https://pypi.org/simple/" }, marker = "python_full_version >= '3.9'" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "django", specifier = ">=4.2,<5.0" },
     { name = "django-cors-headers", specifier = ">=4.4.0" },
+    { name = "django-filter", specifier = ">=24.3" },
     { name = "django-redis" },
     { name = "djangorestframework", specifier = ">=3.14" },
     { name = "gunicorn", specifier = ">=21.0" },
+    { name = "pymysql", specifier = ">=1.1.2" },
 ]
 
 [[package]]
@@ -286,6 +323,31 @@ resolution-markers = [
 sdist = { url = "https://files.pythonhosted.org/packages/7d/fa/3944b40b07da9ce895c0e6303a5ab7d53da063554f534556b134a54d6093/packaging-26.3.tar.gz", hash = "sha256:94edc256424af38762eb31306eed28beb9f0efc50a8837492c9d6fd6004aed79", size = 313412, upload-time = "2026-08-04T18:15:28.737Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/63/34/ba1c580383c9eada3711951fef0795c80b829a078d72188184bcab9dd527/packaging-26.3-py3-none-any.whl", hash = "sha256:d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c", size = 129956, upload-time = "2026-08-04T18:15:27.159Z" },
+]
+
+[[package]]
+name = "pymysql"
+version = "1.1.2"
+source = { registry = "https://pypi.org/simple/" }
+resolution-markers = [
+    "python_full_version < '3.9'",
+]
+sdist = { url = "https://files.pythonhosted.org/packages/f5/ae/1fe3fcd9f959efa0ebe200b8de88b5a5ce3e767e38c7ac32fb179f16a388/pymysql-1.1.2.tar.gz", hash = "sha256:4961d3e165614ae65014e361811a724e2044ad3ea3739de9903ae7c21f539f03", size = 48258, upload-time = "2025-08-24T12:55:55.146Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/7c/4c/ad33b92b9864cbde84f259d5df035a6447f91891f5be77788e2a3892bce3/pymysql-1.1.2-py3-none-any.whl", hash = "sha256:e6b1d89711dd51f8f74b1631fe08f039e7d76cf67a42a323d3178f0f25762ed9", size = 45300, upload-time = "2025-08-24T12:55:53.394Z" },
+]
+
+[[package]]
+name = "pymysql"
+version = "1.2.0"
+source = { registry = "https://pypi.org/simple/" }
+resolution-markers = [
+    "python_full_version >= '3.10'",
+    "python_full_version == '3.9.*'",
+]
+sdist = { url = "https://files.pythonhosted.org/packages/c9/bc/1c6a92f385940f727daeecf3bacaf186e03875dff57197801046c583bcf0/pymysql-1.2.0.tar.gz", hash = "sha256:6c7b17ca686988104d7426c27895b455cdeea3e9d3ceb1270f0c3704fead8c33", size = 49021, upload-time = "2026-05-19T08:26:22.302Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c4/bd/2534e130295c8cfd4f0a2e31623baab7502278f1e97bcfe61db75656a77f/pymysql-1.2.0-py3-none-any.whl", hash = "sha256:62169ce6d5510f08e140c5e7990ee884a9764024e4a9a27b2cc11f1099322ae0", size = 45716, upload-time = "2026-05-19T08:26:20.974Z" },
 ]
 
 [[package]]

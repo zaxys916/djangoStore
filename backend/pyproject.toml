@@ -6,9 +6,11 @@ requires-python = ">=3.8"
 dependencies = [
     "django>=4.2,<5.0",
     "django-cors-headers>=4.4.0",
+    "django-filter>=24.3",
     "django-redis",
     "djangorestframework>=3.14",
     "gunicorn>=21.0",
+    "pymysql>=1.1.2",
 ]
 
 [[tool.uv.index]]
