@@ -1,15 +1,10 @@
 [project]
-name = "djangostore"
-version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
-requires-python = ">=3.12"
+name = "djangoStore"
+version = "1.0.0"
+description = "Django project"
+requires-python = ">=3.8"
 dependencies = [
-    "django",
-    "uv",
-    "gunicorn",
-    "nginx",
-    "nginx-headers",
-    "nginx-headers",
-    "nginx-headers",
+    "django>=4.2,<5.0",
+    "djangorestframework>=3.14",
+    "gunicorn>=21.0",
 ]
