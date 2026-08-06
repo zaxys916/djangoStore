@@ -97,7 +97,20 @@ CACHES = {
             },
         },
         'TIMEOUT': 300,  # 5分钟
-    }
+    },
+    'session': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': f'redis://:{REDIS_PASSWORD}@{REDIS_HOST}:{REDIS_PORT}/2',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+            'CONNECTION_POOL_CLASS': 'redis.BlockingConnectionPool',
+            'CONNECTION_POOL_CLASS_KWARGS': {
+                'max_connections': 50,
+                'timeout': 20,
+            },
+        },
+        'TIMEOUT': 300,  # 5分钟
+    },
 }
 
 # Session 使用 Redis

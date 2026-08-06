@@ -1,0 +1,8 @@
+FROM nginx:alpine
+
+# 删除默认配置和自动生成脚本
+RUN rm -f /etc/nginx/conf.d/default.conf && \
+    rm -f /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
+
+# 复制我们的配置
+COPY nginx.conf /etc/nginx/conf.d/default.conf
