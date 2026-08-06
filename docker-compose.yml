@@ -4,12 +4,12 @@ services:
     container_name: django_mysql
     restart: always
     environment:
-      MYSQL_DATABASE: djangoStore
-      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
       - mysql_data:/var/lib/mysql
     ports:
-      - "3306:3306"
+      - "${MYSQL_PORT:-3306}:3306"
     networks:
       - app_network
 
@@ -17,9 +17,9 @@ services:
     image: redis:alpine
     container_name: django_redis
     restart: always
-    command: redis-server --requirepass redis_password_789
+    command: redis-server --requirepass ${REDIS_PASSWORD}
     ports:
-      - "6379:6379"
+      - "${REDIS_PORT:-6379}:6379"
     networks:
       - app_network
 
@@ -29,19 +29,21 @@ services:
     container_name: django_app
     restart: always
     ports:
-      - "8000:8000" 
+      - "8000:8000"
     env_file:
-      - .env 
+      - .env
     environment:
-      - DEBUG=True
-      - SECRET_KEY=test-key
-      - DB_HOST=mysql
-      - DB_NAME=djangoStore
-      - DB_USER=root
-      - DB_PASSWORD=123456
-      - REDIS_HOST=redis
-      - REDIS_PASSWORD=redis_password_789
-      - ALLOWED_HOSTS=*
+      - DEBUG=${DEBUG}
+      - SECRET_KEY=${SECRET_KEY}
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
     depends_on:
       - mysql
       - redis
@@ -53,6 +55,8 @@ services:
     image: front_end_pc:latest
     container_name: front_end_pc
     restart: always
+    ports:
+      - "8080:8000"
     networks:
       - app_network
 
