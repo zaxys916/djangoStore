@@ -1,3 +1,0 @@
-djangorestframework 
-gunicorn 
-django-cors-headers
