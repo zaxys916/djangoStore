@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'django_filters',
     # 本地应用
-    'apps.users.apps.UsersConfig',
+    'apps.users',
     # 'apps.products',
 ]
 
