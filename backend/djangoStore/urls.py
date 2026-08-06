@@ -18,16 +18,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .apps.users import urls
-def log(request):
-    import logging
-    logger = logging.getLogger("djangoStore")
-    logger.info("log")
-    logger.error("log")
-    logger.warning("log")
-    logger.debug("log")
-    return HttpResponse("log")
+from .utils.converters import UsernameConverter
+from django.urls import register_converter
+
+register_converter(UsernameConverter, 'username')
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('users/', include(urls)),
+    path('', include(urls)),
 ]
