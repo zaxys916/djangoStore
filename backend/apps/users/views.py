@@ -13,16 +13,8 @@ class UsernameCountView(View):
         try:
             count = User.objects.filter(username=username).count()
         except Exception as e:
-            return JsonResponse({'code': 200, 'count': 0, 'errmsg': '数据库异常'})
-        return JsonResponse({'code': 0, 'count': count})
+            # 👇 关键修改：把真实的错误信息返回给前端
+            return JsonResponse({'code': 200, 'count': 0, 'errmsg': f'数据库异常: {str(e)}'})
         
-class MobileCountView(View):
-    def get(self, request, mobile):
-        """
-        判断手机号是否重复
-        """
-        try:
-            count = User.objects.filter(mobile=mobile).count()
-        except Exception as e:
-            return JsonResponse({'code': 200, 'count': 0, 'errmsg': '数据库异常'})
         return JsonResponse({'code': 0, 'count': count})
+
