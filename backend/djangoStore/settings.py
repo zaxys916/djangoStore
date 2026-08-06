@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # 安全设置
 SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-change-me-in-production')
 DEBUG = False
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['www.meiduo.site', '192.168.88.101']
 
 # ==================== 应用定义 ====================
 INSTALLED_APPS = [
