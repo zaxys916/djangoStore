@@ -15,3 +15,14 @@ class UsernameCountView(View):
         except Exception as e:
             return JsonResponse({'code': 200, 'count': 0, 'errmsg': '数据库异常'})
         return JsonResponse({'code': 0, 'count': count})
+        
+class MobileCountView(View):
+    def get(self, request, mobile):
+        """
+        判断手机号是否重复
+        """
+        try:
+            count = User.objects.filter(mobile=mobile).count()
+        except Exception as e:
+            return JsonResponse({'code': 200, 'count': 0, 'errmsg': '数据库异常'})
+        return JsonResponse({'code': 0, 'count': count})
