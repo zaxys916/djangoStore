@@ -76,4 +76,14 @@ class RegisterView(View):
         # return JsonResponse({'code': 0, 'errmsg': '注册成功'})
         # 方式5：使用create_user方法，会自动处理密码的加密，上面密码不会加密
         user = User.objects.create_user(username=username, password=password, mobile=mobile)
+        
+        # 用户状态保持
+        # 设置session
+        # request.session['user_id'] = user.id
+        # request.session.save()
+
+        # 使用django自带的登录方法
+        from django.contrib.auth import login
+        login(request, user)
+        
         return JsonResponse({'code': 0, 'errmsg': '注册成功'})
