@@ -1,20 +1,20 @@
 # -*- coding:utf-8 -*-
-
+import os
 
 try:
     from .SmsSDK import SmsSDK
 except ImportError:
     from SmsSDK import SmsSDK
 
-accId = '2c94811c9f3cb456019fda42accf2e73'
-accToken = '3d532762002d4d57aef909c38d28aa36'
-appId = '2c94811c9f3cb456019fda42ad4e2e7a'
+accId = os.environ.get('SMS_ACCID')
+accToken = os.environ.get('SMS_ACCTOKEN')
+appId = os.environ.get('SMS_APPID')
 
 def send_message():
     sdk = SmsSDK(accId, accToken, appId)
     datas = ('2233', '3')
     tid = '1'
-    mobile = '17519190513'
+    mobile = os.environ.get('SMS_MOBILE')
     resp = sdk.sendMessage(tid, mobile, datas)
     print(resp)
 

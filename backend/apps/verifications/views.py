@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views import View
+from django.http import HttpResponse
 
 '''
 验证码
@@ -25,3 +26,29 @@ class ImageCodeView(View):
         redis_conn.setex(uuid, 100, text)
         # 3. 返回验证码
         return HttpResponse(image, content_type='image/jpeg')
+
+class SmsCodeView(View):
+
+    def get(self, request, mobile):
+        image_code = request.GET.get('image_code')
+        uuid = request.GET.get('uuid')
+        if not all([image_code, uuid]):
+            return JsonResponse({'code': 400, 'errmsg': '缺少参数'})
+        
+        from django_redis import get_redis_connection
+        redis_conn = get_redis_connection('verify_codes')
+        image_code_server = redis_conn.get(uuid)
+        if image_code_server is None:
+            return JsonResponse({'code': 400, 'errmsg': '图片验证码已过期'})
+
+        # 数据类型转换
+        if image_code_server.decode().lower() != image_code.lower():
+            return JsonResponse({'code': 400, 'errmsg': '图片验证码错误'})
+        from random import randint
+        sms_code = "%04d" % randint(0, 9999)
+        redis_conn.setex(mobile, 300, sms_code)
+        from libs.ronglian_sms_sdk import send_sms
+        res = send_sms(mobile, sms_code)
+        if res['code'] != 0:
+            return JsonResponse({'code': 400, 'errmsg': '短信验证码发送失败'})
+        return JsonResponse({'code': 0, 'sms_code': 'ok'})

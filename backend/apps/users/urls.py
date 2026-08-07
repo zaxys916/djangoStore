@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import UsernameCountView
+from .views import UsernameCountView, RegisterView
 
 urlpatterns = [
     path('usernames/<username:username>/count/', UsernameCountView.as_view()),
