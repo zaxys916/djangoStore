@@ -20,6 +20,7 @@ from django.urls import path, include
 from .utils.converters import UsernameConverter
 from django.urls import register_converter
 from apps.users import urls as users_urls
+from apps.verifications import urls as verifications_urls
 
 register_converter(UsernameConverter, 'username')
 
@@ -27,4 +28,5 @@ register_converter(UsernameConverter, 'username')
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include(users_urls)),
+    path('', include(verifications_urls)),
 ]

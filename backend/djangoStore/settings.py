@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django_filters',
     # 本地应用
     'apps.users',
+    'apps.verifications',
     # 'apps.products',
 ]
 
@@ -85,6 +86,15 @@ REDIS_PORT = os.environ.get('REDIS_PORT', '6379')
 REDIS_PASSWORD = os.environ.get('REDIS_PASSWORD', '')
 
 CACHES = {
+    'verify_codes': {
+        'BACKEND': 'django_redis.cache.RedisCache',
+        'LOCATION': f'redis://:{REDIS_PASSWORD}@{REDIS_HOST}:{REDIS_PORT}/0',
+        'OPTIONS': {
+            'CLIENT_CLASS': 'django_redis.client.DefaultClient',
+            'CONNECTION_POOL_CLASS': 'redis.BlockingConnectionPool',
+            'CONNECTION_POOL_CLASS_KWARGS': {
+                'max_connections': 50,
+                'timeout': 20,
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
         'LOCATION': f'redis://:{REDIS_PASSWORD}@{REDIS_HOST}:{REDIS_PORT}/1',
