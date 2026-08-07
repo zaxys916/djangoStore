@@ -44,6 +44,11 @@ services:
       - REDIS_HOST=${REDIS_HOST}
       - REDIS_PORT=${REDIS_PORT}
       - REDIS_PASSWORD=${REDIS_PASSWORD}
+    volumes:
+      - ./:/app          # 挂载 apps 目录（开发热更新）
+      - ./logs:/app/logs          # 日志
+      - ./static:/app/static      # 静态文件
+      - ./media:/app/media        # 媒体文件
     depends_on:
       - mysql
       - redis
