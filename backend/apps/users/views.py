@@ -59,8 +59,8 @@ class RegisterView(View):
 
         # 4. 保存数据
         # 方式1：使用create方法
-        user = User.objects.create(username=username, password=password, mobile=mobile)
-        return JsonResponse({'code': 0, 'errmsg': '注册成功'})
+        # user = User.objects.create(username=username, password=password, mobile=mobile)
+        # return JsonResponse({'code': 0, 'errmsg': '注册成功'})
         # 方式2：使用save方法
         # user = User(username=username, password=password, mobile=mobile)
         # user.save()
@@ -72,3 +72,6 @@ class RegisterView(View):
         # users = [User(username=username, password=password, mobile=mobile) for username, password, mobile in zip(usernames, passwords, mobiles)]
         # User.objects.bulk_create(users)
         # return JsonResponse({'code': 0, 'errmsg': '注册成功'})
+        # 方式5：使用create_user方法，会自动处理密码的加密，上面密码不会加密
+        user = User.objects.create_user(username=username, password=password, mobile=mobile)
+        return JsonResponse({'code': 0, 'errmsg': '注册成功'})
