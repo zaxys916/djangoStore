@@ -44,9 +44,15 @@ class SmsCodeView(View):
         # 数据类型转换
         if image_code_server.decode().lower() != image_code.lower():
             return JsonResponse({'code': 400, 'errmsg': '图片验证码错误'})
+        # 检查短信验证码是否已发送
+        send_flag = redis_conn.get('send_flag_%s' % mobile)
+        if send_flag is not None:
+            return JsonResponse({'code': 400, 'errmsg': '不要频繁发送短信'})
+
         from random import randint
         sms_code = "%04d" % randint(0, 9999)
         redis_conn.setex(mobile, 300, sms_code)
+        redis_conn.setex('send_flag_%s' % mobile, 60, 1)
         from libs.ronglian_sms_sdk import send_sms
         res = send_sms(mobile, sms_code)
         if res['code'] != 0:
