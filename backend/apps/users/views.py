@@ -16,7 +16,7 @@ class UsernameCountView(View):
             count = User.objects.filter(username=username).count()
         except Exception as e:
             # 👇 关键修改：把真实的错误信息返回给前端
-            return JsonResponse({'code': 0 'count': 1, 'errmsg': f'数据库异常: {str(e)}'})
+            return JsonResponse({'code': 0, 'count': 1, 'errmsg': f'数据库异常: {str(e)}'})
         
         return JsonResponse({'code': 0, 'count': count})
 
@@ -59,22 +59,8 @@ class RegisterView(View):
             # 没有勾选用户协议
             return JsonResponse({'code': 0, 'errmsg': '请勾选用户协议'})
 
-        # 4. 保存数据
-        # 方式1：使用create方法
-        # user = User.objects.create(username=username, password=password, mobile=mobile)
-        # return JsonResponse({'code': 0, 'errmsg': '注册成功'})
-        # 方式2：使用save方法
-        # user = User(username=username, password=password, mobile=mobile)
-        # user.save()
-        # return JsonResponse({'code': 0, 'errmsg': '注册成功'})
-        # 方式3：使用update_or_create方法
-        # user, created = User.objects.update_or_create(username=username, defaults={'password': password, 'mobile': mobile})
-        # return JsonResponse({'code': 0, 'errmsg': '注册成功'})
-        # 方式4：使用bulk_create方法
-        # users = [User(username=username, password=password, mobile=mobile) for username, password, mobile in zip(usernames, passwords, mobiles)]
-        # User.objects.bulk_create(users)
-        # return JsonResponse({'code': 0, 'errmsg': '注册成功'})
-        # 方式5：使用create_user方法，会自动处理密码的加密，上面密码不会加密
+
+        # 使用create_user方法，会自动处理密码的加密，上面密码不会加密
         user = User.objects.create_user(username=username, password=password, mobile=mobile)
         
         # 用户状态保持
@@ -87,3 +73,54 @@ class RegisterView(View):
         login(request, user)
         
         return JsonResponse({'code': 0, 'errmsg': '注册成功'})
+
+
+class loginView(View):
+    def post(self, request):
+        """
+        用户登录
+        """
+        # 1. 获取前端传递的参数
+        body_bytes = request.body
+        body_str = body_bytes.decode('utf-8')
+        body_dict = json.loads(body_str)
+
+        # 2. 获取数据
+        username = body_dict.get('username')
+        password = body_dict.get('password')
+        remember = body_dict.get('remember')
+
+        # 3. 验证数据
+        if not all([username, password]):
+            # 有空值
+            return JsonResponse({'code': 400, 'errmsg': '缺少必传参数'})
+
+        # 4.验证账号密码
+        from django.contrib.auth import authenticate
+        # 返回用户对象，如果验证失败，返回None
+        user = authenticate(username=username, password=password)
+
+        # 多种登录方式验证
+        if re.match(r'^1[3-9]\d{9}$', username):
+            # 账号格式正确
+            User.USERNAME_FIELD = 'mobile'
+        else:
+            # 账号格式错误
+            User.USERNAME_FIELD = 'username'
+
+        if user is None:
+            # 账号密码错误
+            return JsonResponse({'code': 400, 'errmsg': '账号或密码错误'})
+        
+        # 5.状态保持
+        from django.contrib.auth import login
+        login(request, user)
+        if remember is not None:
+            # 0 表示关闭浏览器就过期
+            # None 采取系统默认值，默认2周
+            # 其他数据为秒数
+            request.session.set_expiry(0)
+        else:
+            request.session.set_expiry(None)
+        
+        return JsonResponse({'code': 0, 'errmsg': '登录成功'})

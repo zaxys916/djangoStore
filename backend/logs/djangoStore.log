@@ -1,2 +1,416 @@
 INFO 2026-08-06 15:58:42,743 autoreload 667 Watching for file changes with StatReloader
 INFO 2026-08-06 16:07:03,856 autoreload 667 Watching for file changes with StatReloader
+INFO 2026-08-07 15:52:24,154 autoreload 667 Watching for file changes with StatReloader
+ERROR 2026-08-07 15:52:42,235 log 246 Invalid HTTP_HOST header: '192.168.1.104:8000'. You may need to add '192.168.1.104' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.1.104:8000'. You may need to add '192.168.1.104' to ALLOWED_HOSTS.
+WARNING 2026-08-07 15:52:42,238 basehttp 212 "GET /usernames/itcasts/count/ HTTP/1.1" 400 143
+ERROR 2026-08-07 15:52:42,268 log 246 Invalid HTTP_HOST header: '192.168.1.104:8000'. You may need to add '192.168.1.104' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '192.168.1.104:8000'. You may need to add '192.168.1.104' to ALLOWED_HOSTS.
+WARNING 2026-08-07 15:52:42,268 basehttp 212 "GET /favicon.ico HTTP/1.1" 400 143
+INFO 2026-08-07 15:53:06,680 basehttp 212 "GET /usernames/itcasts/count/ HTTP/1.1" 200 23
+WARNING 2026-08-07 15:53:06,712 log 246 Not Found: /favicon.ico
+WARNING 2026-08-07 15:53:06,712 log 246 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2026-08-07 15:53:06,712 basehttp 212 "GET /favicon.ico HTTP/1.1" 404 179
+WARNING 2026-08-07 15:53:06,713 basehttp 212 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 179
+INFO 2026-08-07 15:54:25,731 autoreload 265 /app/djangoStore/settings.py changed, reloading.
+INFO 2026-08-07 15:54:26,542 autoreload 667 Watching for file changes with StatReloader
+INFO 2026-08-07 15:56:14,885 basehttp 212 "GET /usernames/itcasts/count/ HTTP/1.1" 200 23
+WARNING 2026-08-07 15:56:14,921 log 246 Not Found: /favicon.ico
+WARNING 2026-08-07 15:56:14,922 basehttp 212 "GET /favicon.ico HTTP/1.1" 404 179
+INFO 2026-08-07 15:56:53,672 basehttp 212 "POST /register HTTP/1.1" 301 0
+WARNING 2026-08-07 15:56:53,674 log 246 Method Not Allowed (GET): /register/
+WARNING 2026-08-07 15:56:53,675 basehttp 212 "GET /register/ HTTP/1.1" 405 0
+WARNING 2026-08-07 15:57:28,157 log 246 Not Found: /usernames/it/count
+WARNING 2026-08-07 15:57:28,158 basehttp 212 "GET /usernames/it/count HTTP/1.1" 404 179
+WARNING 2026-08-07 15:58:02,974 log 246 Not Found: /usernames/it/count/
+WARNING 2026-08-07 15:58:02,974 basehttp 212 "GET /usernames/it/count/ HTTP/1.1" 404 179
+WARNING 2026-08-07 15:58:11,292 log 246 Not Found: /usernames/it/count/
+WARNING 2026-08-07 15:58:11,293 basehttp 212 "GET /usernames/it/count/ HTTP/1.1" 404 179
+INFO 2026-08-07 15:58:55,071 basehttp 212 "GET /usernames/itcasts/count/ HTTP/1.1" 200 23
+WARNING 2026-08-07 15:59:06,048 log 246 Not Found: /usernames/itcs/count/
+WARNING 2026-08-07 15:59:06,048 basehttp 212 "GET /usernames/itcs/count/ HTTP/1.1" 404 179
+WARNING 2026-08-07 16:00:59,406 log 246 Not Found: /
+WARNING 2026-08-07 16:00:59,407 basehttp 212 "GET / HTTP/1.1" 404 179
+WARNING 2026-08-07 16:01:04,343 log 246 Not Found: /
+WARNING 2026-08-07 16:01:04,344 basehttp 212 "GET / HTTP/1.1" 404 179
+ERROR 2026-08-07 16:03:00,374 log 246 Internal Server Error: /image_codes/caa6dc89-c0fa-4085-8e2e-a048ce30010a/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/verifications/views.py", line 22, in get
+    text, image = Captcha.generate_captcha()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Captcha.generate_captcha() missing 1 required positional argument: 'self'
+ERROR 2026-08-07 16:03:00,378 basehttp 212 "GET /image_codes/caa6dc89-c0fa-4085-8e2e-a048ce30010a/ HTTP/1.1" 500 145
+ERROR 2026-08-07 16:03:02,825 log 246 Internal Server Error: /image_codes/8574f4dd-d81a-45a7-a545-1ee35df8610e/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/verifications/views.py", line 22, in get
+    text, image = Captcha.generate_captcha()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Captcha.generate_captcha() missing 1 required positional argument: 'self'
+ERROR 2026-08-07 16:03:02,827 basehttp 212 "GET /image_codes/8574f4dd-d81a-45a7-a545-1ee35df8610e/ HTTP/1.1" 500 145
+ERROR 2026-08-07 16:03:04,647 log 246 Internal Server Error: /image_codes/93c2bd38-5ab9-4d19-8428-0751fc892710/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/verifications/views.py", line 22, in get
+    text, image = Captcha.generate_captcha()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Captcha.generate_captcha() missing 1 required positional argument: 'self'
+ERROR 2026-08-07 16:03:04,649 basehttp 212 "GET /image_codes/93c2bd38-5ab9-4d19-8428-0751fc892710/ HTTP/1.1" 500 145
+ERROR 2026-08-07 16:03:05,248 log 246 Internal Server Error: /image_codes/23766cb7-43bb-44e6-a754-9e19f309deb2/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/verifications/views.py", line 22, in get
+    text, image = Captcha.generate_captcha()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Captcha.generate_captcha() missing 1 required positional argument: 'self'
+ERROR 2026-08-07 16:03:05,250 basehttp 212 "GET /image_codes/23766cb7-43bb-44e6-a754-9e19f309deb2/ HTTP/1.1" 500 145
+ERROR 2026-08-07 16:03:15,602 log 246 Internal Server Error: /image_codes/23070f84-56ba-4449-9fa3-3fcbb50af81e/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/verifications/views.py", line 22, in get
+    text, image = Captcha.generate_captcha()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Captcha.generate_captcha() missing 1 required positional argument: 'self'
+ERROR 2026-08-07 16:03:15,605 basehttp 212 "GET /image_codes/23070f84-56ba-4449-9fa3-3fcbb50af81e/ HTTP/1.1" 500 145
+INFO 2026-08-07 16:04:53,318 autoreload 265 /app/libs/captcha/captcha.py changed, reloading.
+INFO 2026-08-07 16:04:53,983 autoreload 667 Watching for file changes with StatReloader
+ERROR 2026-08-07 16:06:10,364 log 246 Internal Server Error: /image_codes/7258d7dc-42c4-45f9-b654-e70e8f74ffd4/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/verifications/views.py", line 22, in get
+    text, image = Captcha.generate_captcha()
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Captcha.generate_captcha() missing 1 required positional argument: 'self'
+ERROR 2026-08-07 16:06:10,369 basehttp 212 "GET /image_codes/7258d7dc-42c4-45f9-b654-e70e8f74ffd4/ HTTP/1.1" 500 145
+INFO 2026-08-07 16:06:56,821 autoreload 265 /app/apps/verifications/views.py changed, reloading.
+INFO 2026-08-07 16:06:57,481 autoreload 667 Watching for file changes with StatReloader
+ERROR 2026-08-07 16:07:30,575 log 246 Internal Server Error: /image_codes/72fc3d4f-d61c-4d3a-8ac1-b1a5e4ea8ff4/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/verifications/views.py", line 26, in get
+    redis_conn.setex(uuid, 100, text)
+  File "/usr/local/lib/python3.12/site-packages/redis/commands/core.py", line 2366, in setex
+    return self.execute_command("SETEX", name, time, value)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 536, in execute_command
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 537, in <lambda>
+    lambda: self._send_command_parse_response(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 512, in _send_command_parse_response
+    conn.send_command(*args)
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 465, in send_command
+    self._command_packer.pack(*args),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 96, in pack
+    for arg in map(self.encode, args):
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/encoders.py", line 29, in encode
+    raise DataError(
+redis.exceptions.DataError: Invalid input of type: 'UUID'. Convert to a bytes, string, int or float first.
+ERROR 2026-08-07 16:07:30,582 basehttp 212 "GET /image_codes/72fc3d4f-d61c-4d3a-8ac1-b1a5e4ea8ff4/ HTTP/1.1" 500 145
+ERROR 2026-08-07 16:08:42,426 log 246 Internal Server Error: /image_codes/23070f84-56ba-4449-9fa3-3fcbb50af81e/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/verifications/views.py", line 26, in get
+    redis_conn.setex(uuid, 100, text)
+  File "/usr/local/lib/python3.12/site-packages/redis/commands/core.py", line 2366, in setex
+    return self.execute_command("SETEX", name, time, value)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 536, in execute_command
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 537, in <lambda>
+    lambda: self._send_command_parse_response(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 512, in _send_command_parse_response
+    conn.send_command(*args)
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 465, in send_command
+    self._command_packer.pack(*args),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 96, in pack
+    for arg in map(self.encode, args):
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/encoders.py", line 29, in encode
+    raise DataError(
+redis.exceptions.DataError: Invalid input of type: 'UUID'. Convert to a bytes, string, int or float first.
+ERROR 2026-08-07 16:08:42,428 basehttp 212 "GET /image_codes/23070f84-56ba-4449-9fa3-3fcbb50af81e/ HTTP/1.1" 500 145
+WARNING 2026-08-07 16:08:56,848 log 246 Not Found: /image_codes/test-uuid/
+WARNING 2026-08-07 16:08:56,849 basehttp 212 "GET /image_codes/test-uuid/ HTTP/1.1" 404 179
+INFO 2026-08-07 16:09:34,785 autoreload 667 Watching for file changes with StatReloader
+WARNING 2026-08-07 16:09:41,826 log 246 Not Found: /image_codes/test-uuid/
+WARNING 2026-08-07 16:09:41,827 basehttp 212 "GET /image_codes/test-uuid/ HTTP/1.1" 404 179
+WARNING 2026-08-07 16:09:48,241 log 246 Not Found: /image_codes/test-uuid/
+WARNING 2026-08-07 16:09:48,241 basehttp 212 "GET /image_codes/test-uuid/ HTTP/1.1" 404 179
+INFO 2026-08-07 16:09:55,413 basehttp 212 "GET /admin/ HTTP/1.1" 302 0
+INFO 2026-08-07 16:09:55,433 basehttp 212 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4195
+ERROR 2026-08-07 16:10:12,608 log 246 Internal Server Error: /image_codes/23070f84-56ba-4449-9fa3-3fcbb50af81e/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/verifications/views.py", line 26, in get
+    redis_conn.setex(uuid, 100, text)
+  File "/usr/local/lib/python3.12/site-packages/redis/commands/core.py", line 2366, in setex
+    return self.execute_command("SETEX", name, time, value)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 536, in execute_command
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 537, in <lambda>
+    lambda: self._send_command_parse_response(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 512, in _send_command_parse_response
+    conn.send_command(*args)
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 465, in send_command
+    self._command_packer.pack(*args),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 96, in pack
+    for arg in map(self.encode, args):
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/encoders.py", line 29, in encode
+    raise DataError(
+redis.exceptions.DataError: Invalid input of type: 'UUID'. Convert to a bytes, string, int or float first.
+ERROR 2026-08-07 16:10:12,614 basehttp 212 "GET /image_codes/23070f84-56ba-4449-9fa3-3fcbb50af81e/ HTTP/1.1" 500 145
+INFO 2026-08-07 16:11:36,628 autoreload 667 Watching for file changes with StatReloader
+ERROR 2026-08-07 16:11:48,039 log 246 Internal Server Error: /image_codes/23070f84-56ba-4449-9fa3-3fcbb50af81e/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/verifications/views.py", line 26, in get
+    redis_conn.setex(uuid, 100, text)
+  File "/usr/local/lib/python3.12/site-packages/redis/commands/core.py", line 2366, in setex
+    return self.execute_command("SETEX", name, time, value)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 536, in execute_command
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 537, in <lambda>
+    lambda: self._send_command_parse_response(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 512, in _send_command_parse_response
+    conn.send_command(*args)
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 465, in send_command
+    self._command_packer.pack(*args),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 96, in pack
+    for arg in map(self.encode, args):
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/encoders.py", line 29, in encode
+    raise DataError(
+redis.exceptions.DataError: Invalid input of type: 'UUID'. Convert to a bytes, string, int or float first.
+ERROR 2026-08-07 16:11:48,046 basehttp 212 "GET /image_codes/23070f84-56ba-4449-9fa3-3fcbb50af81e/ HTTP/1.1" 500 145
+ERROR 2026-08-07 16:11:56,678 log 246 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-08-07 16:12:04,866 log 246 Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/middleware/common.py", line 48, in process_request
+    host = request.get_host()
+           ^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/http/request.py", line 151, in get_host
+    raise DisallowedHost(msg)
+django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: 'testserver'. You may need to add 'testserver' to ALLOWED_HOSTS.
+ERROR 2026-08-07 16:12:19,792 log 246 Internal Server Error: /image_codes/23070f84-56ba-4449-9fa3-3fcbb50af81e/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/django/views/generic/base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/apps/verifications/views.py", line 26, in get
+    redis_conn.setex(uuid, 100, text)
+  File "/usr/local/lib/python3.12/site-packages/redis/commands/core.py", line 2366, in setex
+    return self.execute_command("SETEX", name, time, value)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 536, in execute_command
+    return conn.retry.call_with_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+           ^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 537, in <lambda>
+    lambda: self._send_command_parse_response(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/client.py", line 512, in _send_command_parse_response
+    conn.send_command(*args)
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 465, in send_command
+    self._command_packer.pack(*args),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/connection.py", line 96, in pack
+    for arg in map(self.encode, args):
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/redis/_parsers/encoders.py", line 29, in encode
+    raise DataError(
+redis.exceptions.DataError: Invalid input of type: 'UUID'. Convert to a bytes, string, int or float first.
+INFO 2026-08-07 16:12:43,851 autoreload 265 /app/apps/verifications/views.py changed, reloading.
+INFO 2026-08-07 16:12:44,525 autoreload 667 Watching for file changes with StatReloader

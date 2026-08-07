@@ -1,3 +1,3 @@
 // 保存后端API服务器地址
- var host = 'http://www.meiduo.site:8000';
-//var host = 'http://127.0.0.1:8000';
+// 空字符串：走 nginx 80 端口同源访问，无跨域问题
+ var host = '';

@@ -8,6 +8,7 @@ django-filter==23.5
 # 数据库
 mysqlclient==2.2.4
 pymysql==1.1.1
+cryptography==42.0.8
 
 # 生产部署
 gunicorn==21.2.0

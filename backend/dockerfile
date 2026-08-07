@@ -1,4 +1,3 @@
-cat > /root/django-store/backend/Dockerfile << 'EOF'
 FROM python:3.12-slim
 
 WORKDIR /app
@@ -21,12 +20,12 @@ COPY requirements.txt .
 
 # 如果 requirements.txt 不存在，创建基本依赖
 RUN if [ ! -f requirements.txt ]; then \
-        echo "Django==4.2.7" > requirements.txt && \
-        echo "djangorestframework==3.14.0" >> requirements.txt && \
-        echo "pymysql==1.1.0" >> requirements.txt && \
-        echo "mysqlclient==2.2.0" >> requirements.txt && \
-        echo "redis==5.0.1" >> requirements.txt && \
-        echo "django-cors-headers==4.3.1" >> requirements.txt; \
+    echo "Django==4.2.7" > requirements.txt && \
+    echo "djangorestframework==3.14.0" >> requirements.txt && \
+    echo "pymysql==1.1.0" >> requirements.txt && \
+    echo "mysqlclient==2.2.0" >> requirements.txt && \
+    echo "redis==5.0.1" >> requirements.txt && \
+    echo "django-cors-headers==4.3.1" >> requirements.txt; \
     fi
 
 # 安装 Python 依赖
@@ -42,4 +41,3 @@ EXPOSE 8000
 
 # 等待数据库就绪，然后迁移并启动
 CMD ["sh", "-c", "while ! nc -z ${DB_HOST:-mysql} ${DB_PORT:-3306}; do echo '等待数据库...'; sleep 2; done; python manage.py migrate --noinput && python manage.py collectstatic --noinput && python manage.py runserver 0.0.0.0:8000"]
-EOF

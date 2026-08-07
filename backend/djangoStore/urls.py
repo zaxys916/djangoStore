@@ -16,13 +16,15 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path, include
-from .utils.converters import UsernameConverter
-from django.urls import register_converter
+from django.urls import path, include, register_converter
+from utils.converters import UsernameConverter
+
+# 必须在 import users/urls 之前注册 converter，
+# 否则 users/urls.py 里的 <username:username> 解析时找不到 converter
+register_converter(UsernameConverter, 'username')
+
 from apps.users import urls as users_urls
 from apps.verifications import urls as verifications_urls
-
-register_converter(UsernameConverter, 'username')
 
 
 urlpatterns = [

@@ -28,6 +28,7 @@ services:
   django:
     build:
       context: ./backend
+      dockerfile: dockerfile
     image: django-store:latest
     container_name: django_app
     restart: always
