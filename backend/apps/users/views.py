@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.views import View
 from django.http import HttpResponse, JsonResponse
 from .models import User
+import json
+import re
 
 # Create your views here.
 # 判断用户名是否重复
