@@ -364,6 +364,7 @@ dependencies = [
     { name = "gunicorn", version = "26.0.0", source = { registry = "https://pypi.org/simple/" }, marker = "python_full_version >= '3.10'" },
     { name = "pymysql", version = "1.1.2", source = { registry = "https://pypi.org/simple/" }, marker = "python_full_version < '3.9'" },
     { name = "pymysql", version = "1.2.0", source = { registry = "https://pypi.org/simple/" }, marker = "python_full_version >= '3.9'" },
+    { name = "qqlogintool" },
     { name = "ronglian-sms-sdk" },
 ]
 
@@ -376,6 +377,7 @@ requires-dist = [
     { name = "djangorestframework", specifier = ">=3.14" },
     { name = "gunicorn", specifier = ">=21.0" },
     { name = "pymysql", specifier = ">=1.1.2" },
+    { name = "qqlogintool", specifier = ">=0.3.0" },
     { name = "ronglian-sms-sdk", specifier = ">=1.0" },
 ]
 
@@ -485,6 +487,17 @@ sdist = { url = "https://files.pythonhosted.org/packages/c9/bc/1c6a92f385940f727
 wheels = [
     { url = "https://files.pythonhosted.org/packages/c4/bd/2534e130295c8cfd4f0a2e31623baab7502278f1e97bcfe61db75656a77f/pymysql-1.2.0-py3-none-any.whl", hash = "sha256:62169ce6d5510f08e140c5e7990ee884a9764024e4a9a27b2cc11f1099322ae0", size = 45716, upload-time = "2026-05-19T08:26:20.974Z" },
 ]
+
+[[package]]
+name = "qqlogintool"
+version = "0.3.0"
+source = { registry = "https://pypi.org/simple/" }
+dependencies = [
+    { name = "requests", version = "2.32.4", source = { registry = "https://pypi.org/simple/" }, marker = "python_full_version < '3.9'" },
+    { name = "requests", version = "2.32.5", source = { registry = "https://pypi.org/simple/" }, marker = "python_full_version == '3.9.*'" },
+    { name = "requests", version = "2.34.2", source = { registry = "https://pypi.org/simple/" }, marker = "python_full_version >= '3.10'" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/05/47/0dd84c378416b6cf9c4d4a0ffaa7b12fda318b132f7ea2aff0690f3cfb88/QQLoginTool-0.3.0.tar.gz", hash = "sha256:725027faf208eb4c430f5cdb23c255e67ebadf51eb984cadd0b4c8e03569c3c2", size = 1902, upload-time = "2018-08-02T10:38:38.881Z" }
 
 [[package]]
 name = "redis"

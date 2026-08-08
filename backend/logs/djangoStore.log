@@ -414,3 +414,46 @@ Traceback (most recent call last):
 redis.exceptions.DataError: Invalid input of type: 'UUID'. Convert to a bytes, string, int or float first.
 INFO 2026-08-07 16:12:43,851 autoreload 265 /app/apps/verifications/views.py changed, reloading.
 INFO 2026-08-07 16:12:44,525 autoreload 667 Watching for file changes with StatReloader
+INFO 2026-08-07 16:13:12,650 basehttp 212 "GET /image_codes/ffdb92d9-31f6-4ed8-a55c-7a1cb8319933/ HTTP/1.1" 200 2979
+INFO 2026-08-07 16:20:07,683 autoreload 265 /app/libs/captcha/captcha.py changed, reloading.
+INFO 2026-08-07 16:20:08,389 autoreload 667 Watching for file changes with StatReloader
+INFO 2026-08-07 16:20:11,926 autoreload 265 /app/apps/users/views.py changed, reloading.
+INFO 2026-08-07 16:20:12,615 autoreload 667 Watching for file changes with StatReloader
+INFO 2026-08-07 16:21:20,757 autoreload 265 /app/apps/users/views.py changed, reloading.
+INFO 2026-08-07 16:21:21,432 autoreload 667 Watching for file changes with StatReloader
+INFO 2026-08-07 16:21:44,593 autoreload 265 /app/apps/users/urls.py changed, reloading.
+INFO 2026-08-07 16:21:45,301 autoreload 667 Watching for file changes with StatReloader
+INFO 2026-08-07 16:23:02,135 autoreload 265 /app/apps/users/views.py changed, reloading.
+INFO 2026-08-07 16:23:02,840 autoreload 667 Watching for file changes with StatReloader
+INFO 2026-08-07 16:23:16,479 autoreload 265 /app/apps/users/views.py changed, reloading.
+INFO 2026-08-07 16:23:17,176 autoreload 667 Watching for file changes with StatReloader
+INFO 2026-08-07 16:32:19,902 autoreload 265 /app/apps/users/urls.py changed, reloading.
+INFO 2026-08-07 16:32:20,565 autoreload 667 Watching for file changes with StatReloader
+INFO 2026-08-07 16:32:35,409 autoreload 265 /app/apps/users/views.py changed, reloading.
+INFO 2026-08-07 16:32:36,058 autoreload 667 Watching for file changes with StatReloader
+INFO 2026-08-07 16:34:48,700 autoreload 265 /app/apps/users/views.py changed, reloading.
+INFO 2026-08-07 16:34:49,389 autoreload 667 Watching for file changes with StatReloader
+INFO 2026-08-07 16:35:00,700 autoreload 265 /app/apps/users/urls.py changed, reloading.
+INFO 2026-08-07 16:35:01,400 autoreload 667 Watching for file changes with StatReloader
+INFO 2026-08-07 16:37:46,022 autoreload 265 /app/apps/users/views.py changed, reloading.
+INFO 2026-08-07 16:37:46,695 autoreload 667 Watching for file changes with StatReloader
+INFO 2026-08-07 16:39:17,779 autoreload 265 /app/apps/users/views.py changed, reloading.
+INFO 2026-08-07 16:39:17,736 autoreload 667 Watching for file changes with StatReloader
+INFO 2026-08-07 16:39:23,170 autoreload 265 /app/apps/users/views.py changed, reloading.
+INFO 2026-08-07 16:39:23,826 autoreload 667 Watching for file changes with StatReloader
+INFO 2026-08-07 16:39:55,409 autoreload 265 /app/apps/users/views.py changed, reloading.
+INFO 2026-08-07 16:39:56,072 autoreload 667 Watching for file changes with StatReloader
+INFO 2026-08-07 16:39:58,440 autoreload 265 /app/apps/users/views.py changed, reloading.
+INFO 2026-08-07 16:39:59,127 autoreload 667 Watching for file changes with StatReloader
+INFO 2026-08-07 16:40:10,966 autoreload 265 /app/apps/users/views.py changed, reloading.
+INFO 2026-08-07 16:40:11,682 autoreload 667 Watching for file changes with StatReloader
+INFO 2026-08-07 16:40:13,146 autoreload 265 /app/apps/users/views.py changed, reloading.
+INFO 2026-08-07 16:40:13,825 autoreload 667 Watching for file changes with StatReloader
+INFO 2026-08-07 16:40:54,927 autoreload 265 /app/apps/users/views.py changed, reloading.
+INFO 2026-08-07 16:40:55,756 autoreload 667 Watching for file changes with StatReloader
+INFO 2026-08-07 16:41:24,130 autoreload 265 /app/apps/users/views.py changed, reloading.
+INFO 2026-08-07 16:41:24,835 autoreload 667 Watching for file changes with StatReloader
+INFO 2026-08-07 16:44:57,039 autoreload 265 /app/apps/users/views.py changed, reloading.
+INFO 2026-08-07 16:44:57,703 autoreload 667 Watching for file changes with StatReloader
+INFO 2026-08-07 16:47:23,167 autoreload 265 /app/apps/users/views.py changed, reloading.
+INFO 2026-08-07 16:47:23,826 autoreload 667 Watching for file changes with StatReloader

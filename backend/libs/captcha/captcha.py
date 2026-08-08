@@ -47,8 +47,7 @@ class Bezier:
             for t in self.tsequence:
                 tpowers = (t ** i for i in range(n))
                 upowers = ((1 - t) ** i for i in range(n - 1, -1, -1))
-                coefs = [c * a * b for c, a, b in zip(combinations,
-                                                      tpowers, upowers)]
+                coefs = [c * a * b for c, a, b in zip(combinations, tpowers, upowers)]
                 result.append(coefs)
             self.beziers[n] = result
             return result
@@ -123,8 +122,8 @@ class Captcha(object):
     def text(self, image, fonts, font_sizes=None, drawings=None, squeeze_factor=0.75, color=None):
         color = color if color else self._color
         fonts = tuple([truetype(name, size)
-                       for name in fonts
-                       for size in font_sizes or (65, 70, 75)])
+        for name in fonts
+        for size in font_sizes or (65, 70, 75)])
         draw = Draw(image)
         char_images = []
         for c in self._text:
@@ -142,8 +141,7 @@ class Captcha(object):
             char_images.append(char_image)
         width, height = image.size
         offset = int((width - sum(int(i.size[0] * squeeze_factor)
-                                  for i in char_images[:-1]) -
-                      char_images[-1].size[0]) / 2)
+        for i in char_images[:-1]) -char_images[-1].size[0]) / 2)
         for char_image in char_images:
             c_width, c_height = char_image.size
             mask = char_image.convert('L').point(lambda i: i * 1.97)
@@ -163,17 +161,12 @@ class Captcha(object):
         y1 = int(random.uniform(-dy, dy))
         x2 = int(random.uniform(-dx, dx))
         y2 = int(random.uniform(-dy, dy))
-        image2 = Image.new('RGB',
-                           (width + abs(x1) + abs(x2),
-                            height + abs(y1) + abs(y2)))
+        image2 = Image.new('RGB',(width + abs(x1) + abs(x2),height + abs(y1) + abs(y2)))
         image2.paste(image, (abs(x1), abs(y1)))
         width2, height2 = image2.size
         return image2.transform(
             (width, height), Image.QUAD,
-            (x1, y1,
-             -x1, height2 - y2,
-             width2 + x2, height2 + y2,
-             width2 - x2, -y1))
+            (x1, y1,-x1, height2 - y2, width2 + x2, height2 + y2, width2 - x2, -y1))
 
     @staticmethod
     def offset(image, dx_factor=0.1, dy_factor=0.2):

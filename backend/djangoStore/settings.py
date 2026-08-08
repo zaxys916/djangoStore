@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     # 本地应用
     'apps.users',
     'apps.verifications',
+    'apps.qq_oauth',
     # 'apps.products',
 ]
 
@@ -244,3 +245,11 @@ CORS_ORIGIN_WHITELIST = (
     'http://www.meiduo.site:8000'
 )
 CORS_ALLOW_CREDENTIALS = True  # 允许携带cookie
+
+# appid
+QQ_CLIENT_ID = '101526123'
+
+# appkey
+QQ_CLIENT_SECRET = 'c6ce949e04e12ecc909ae6a8b09v6307'
+
+QQ_REDIRECT_URI = 'http://www.meiduo.site:8000/oauth/oauth_callback.html'

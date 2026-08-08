@@ -123,4 +123,41 @@ class loginView(View):
         else:
             request.session.set_expiry(None)
         
-        return JsonResponse({'code': 0, 'errmsg': '登录成功'})
+        response = JsonResponse({'code': 0, 'errmsg': '登录成功'})
+        response.set_cookie('username', username, max_age=14*24*3600)
+
+        return response
+
+
+from django.contrib.auth import logout
+class logoutView(View):
+    def delete(self, request):
+        """
+        用户退出登录
+        """
+        # 1. 清理session
+        logout(request)
+        
+        response = JsonResponse({'code': 0, 'errmsg': '退出登录成功'})
+        # 2. 删除cookie
+        response.delete_cookie('username')
+
+        return response
+
+from utils.views import LoginRequiredJSONMixin
+class CenterView(LoginRequiredJSONMixin, View):
+
+    def get(self, request):
+        """
+        用户中心
+        登录了才可以访问
+        """
+        # 1. 获取用户信息
+        user = request.user
+        
+        # 2. 响应用户信息
+        return JsonResponse({'code': 0, 'errmsg': '获取用户信息成功', 'info': {
+            'username': user.username,
+            'mobile': user.mobile,
+            'email': user.email,
+        }})

@@ -25,10 +25,12 @@ register_converter(UsernameConverter, 'username')
 
 from apps.users import urls as users_urls
 from apps.verifications import urls as verifications_urls
+from apps.qq_oauth import urls as qq_oauth_urls
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include(users_urls)),
     path('', include(verifications_urls)),
+    path('', include(qq_oauth_urls)),
 ]
