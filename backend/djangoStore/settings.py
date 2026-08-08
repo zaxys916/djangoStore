@@ -253,3 +253,10 @@ QQ_CLIENT_ID = '101526123'
 QQ_CLIENT_SECRET = 'c6ce949e04e12ecc909ae6a8b09v6307'
 
 QQ_REDIRECT_URI = 'http://www.meiduo.site:8000/oauth/oauth_callback.html'
+
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_PORT = os.getenv('EMAIL_PORT')
+EMAIL_BACKEND = os.getenv('EMAIL_BACKEND')
+EMAIL_FROM = os.getenv('EMAIL_FROM')
