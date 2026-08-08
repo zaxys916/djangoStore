@@ -48,7 +48,9 @@ class QQAuthURLView(View):
         try:
             qquser = OAuthQQUser.objects.get(openid=openid)
         except OAuthQQUser.DoesNotExist:
-            return JsonResponse({'code': 400, 'errmsg': '用户未绑定', 'openid': openid})
+            from apps.qq_oauth.utils import generate_access_token
+            access_token = generate_access_token(openid)
+            return JsonResponse({'code': 400, 'access_token': access_token})
         else:
             # 登录用户
             user = qquser.user
@@ -63,6 +65,17 @@ import json
 from django.contrib.auth import login
 from apps.qq_oauth.models import OAuthQQUser
 from apps.users.models import User
+from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
+
+
+# 初始化序列化器,不仅可以对数据进行加密，也可以设置过期时间
+s = Serializer(settings.SECRET_KEY, 3600)
+# 数据加密
+token = s.dumps({'openid': openid})
+# 数据解密
+data = s.loads(token)
+
+
 
 class OauthQQView(View):
     """
@@ -76,7 +89,13 @@ class OauthQQView(View):
         mobile = data.get('mobile')
         password = data.get('password')
         sms_code = data.get('sms_code')
-        openid = data.get('access_token')
+        access_token = data.get('access_token')
+        
+        from apps.qq_oauth.utils import check_access_token
+        openid = check_access_token(access_token)
+
+        if not openid:
+            return JsonResponse({'code': 400, 'errmsg': '参数缺失'})
 
         try:
             user = User.objects.get(mobile=mobile)

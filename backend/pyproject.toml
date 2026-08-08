@@ -10,6 +10,7 @@ dependencies = [
     "django-redis",
     "djangorestframework>=3.14",
     "gunicorn>=21.0",
+    "itsdangerous>=2.2.0",
     "pymysql>=1.1.2",
     "qqlogintool>=0.3.0",
     "ronglian-sms-sdk>=1.0",
